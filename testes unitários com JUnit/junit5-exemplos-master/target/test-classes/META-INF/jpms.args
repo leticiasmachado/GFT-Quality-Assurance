@@ -1,0 +1,4 @@
+--patch-module
+com.github.willyancaetano.junit=_
+--add-reads
+com.github.willyancaetano.junit=ALL-UNNAMED
