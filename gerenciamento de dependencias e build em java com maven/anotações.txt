@@ -1,0 +1,14 @@
+Comandos Maven
+mvn compile: compila as classes, todos os códigos classes são compilados e inseridos na pasta "target"
+mvn test: testar a aplicação, maven encontra todas as classes de teste dentro do projeto e executa todos testes/validações
+mvn package: cria o arquivo .jar da aplicação e salva na parta "target"
+mvn clean: apaga a pasta "target"
+
+Classpath: referência que a aplicação tem para o momento de execução (runtime, test e compile)
+Escopos: limitam as transitividades das dependências. Existem 6 tipos, são eles:
+- Compile: escopo padrão, considerado quando não definimos nenhum escopo para a aplicação, é transitivo
+- Provided: a dependência será fornecida em tempo de execução por uma implementação na JDK ou via container. É usado para test e compile, mas não para runtime. Não transitivo.
+- Runtime: indica que a dependência é necessária para execução e não para compilação. Inclui no classpath escopos de runtime e test.
+- Test: disponível somente para compilação e execução dos testes. Não transitivo.
+- System: similar ao provided, exceto por ser necessário prover o JAR explicitamente. Não transitivo
+- Import: disponível apenas com uma dependência do tipo POm e com tag<dependencyManagement>. Indica um processo de reutilizar dependências de um projeto.
